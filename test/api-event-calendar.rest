@@ -1,0 +1,47 @@
+### pedir evento por año (obligatorio) y por mes y dia
+# si se envia un mes es obligatorio enviar el año
+# si se envia un dia es obligatorio enviar el mes y el año
+
+GET http://localhost:3001/api/events?year=2023 HTTP/1.1
+
+###
+
+GET http://localhost:3001/api/events HTTP/1.1
+
+###
+
+GET http://localhost:3001/api/events?year=2023&month=11 HTTP/1.1
+
+###
+
+GET http://localhost:3001/api/events?year=2023&month=11&day=6 HTTP/1.1
+
+###
+
+GET http://localhost:3001/api/events?year=2023&day=6 HTTP/1.1
+
+### Crear un evento
+
+POST http://localhost:3001/api/events HTTP/1.1
+content-type: application/json
+
+{
+    "month": 5,
+    "year": 2023,
+    "day": 7,
+    "title": "esto es un titulo",
+    "comment": "esto es un cometario"
+}
+
+### Crear un evento (da error)
+
+POST http://localhost:3001/api/events HTTP/1.1
+content-type: application/json
+
+{
+    "month": 25,
+    "year": 2023,
+    "day": 7,
+    "title": "esto es un titulo",
+    "comment": "esto es un cometario"
+}

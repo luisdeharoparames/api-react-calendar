@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/events HTTP/1.1
+content-type: application/json
+
+{
+    "month": 5,
+    "year": 2023,
+    "day": 7,
+    "title": "esto es un titulo",
+    "comment": "esto es un cometario"
+}
